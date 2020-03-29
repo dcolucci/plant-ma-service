@@ -8,9 +8,8 @@ const doc = new GoogleSpreadsheet(SHEET_ID);
 
 
 const expandRow = (rowData) => {
-  // split last row on comma
-  // map over that and add a new array that includes the length - 2 items of rowData
-  // return array of arrays
+  const starSigns = rowData.pop().split(',');
+  return starSigns.map(sign => [...rowData, sign]);
 };
 
 module.exports = async function loadData() {
@@ -22,6 +21,6 @@ module.exports = async function loadData() {
   return rows.reduce((acc, row) => {
     const expandedRow = expandRow(row._rawData);
     acc.push(...expandedRow);
+    return acc;
   }, []);
-  // console.log(rows[0]._rawData);
 };
