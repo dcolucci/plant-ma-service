@@ -9,7 +9,7 @@ const doc = new GoogleSpreadsheet(SHEET_ID);
 
 const expandRow = (rowData) => {
   const starSigns = rowData.pop().split(',');
-  return starSigns.map(sign => [...rowData, sign]);
+  return starSigns.map(sign => [...rowData, sign.trim()]);
 };
 
 module.exports = async function loadData() {
