@@ -18,10 +18,18 @@ module.exports = async function loadData() {
   const sheet = doc.sheetsByIndex[0];
   const rows = await sheet.getRows(); 
   await sheet.loadHeaderRow();
-  
-  return rows.reduce((acc, row) => {
-    const expandedRow = expandRow(row._rawData);
-    acc.push(...expandedRow);
-    return acc;
-  }, [sheet.headerValues]);
+  const headerValues = sheet.headerValues;
+
+  return rows
+    .reduce((expandedResults, row) => {
+      const expandedRow = expandRow(row._rawData);
+      expandedResults.push(...expandedRow);
+      return expandedResults;
+    }, [])
+    .map(row => {
+      return headerValues.reduce((hit, key, index) => {
+        hit[key] = row[index];
+        return hit;
+      }, {});
+    });
 };

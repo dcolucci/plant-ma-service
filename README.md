@@ -16,3 +16,8 @@ To start:
     1. select "Google Sheets"
  1. Open the Google Sheet that will be used to store the data
     1. Share the sheet with the email address of your new Service Account
+
+## To Do
+ * [ ] server logging
+ * [ ] query param whitelist
+ * [ ] error handling for data load failure
