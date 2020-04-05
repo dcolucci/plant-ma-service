@@ -12,6 +12,7 @@ app.get('/recommendations', (req, res) => {
 
 module.exports = async (loadData) => {
   _data = await loadData();
+  console.log(`loaded ${_data.length} entries!`);
   app.listen(8000, () => {
     console.log('server started on port 8000!');
   });
