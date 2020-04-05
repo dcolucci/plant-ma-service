@@ -21,3 +21,4 @@ To start:
  * [ ] server logging
  * [ ] query param whitelist
  * [ ] error handling for data load failure
+ * [ ] benchmarking
