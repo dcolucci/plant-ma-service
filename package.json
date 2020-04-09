@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "heroku-postbuild": "node ./build-process/buildCredsFile.js",
     "start": "node index.js",
     "test": "jest"
   },

@@ -1,3 +1,4 @@
 node_modules
 .env
 plant-ma-google-service-creds.json
+plant-ma-google-service-creds-auto.json
