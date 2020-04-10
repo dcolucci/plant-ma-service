@@ -13,6 +13,7 @@ const expandRow = (rowData) => {
 };
 
 module.exports = async function loadData() {
+  console.log('CREDS:', creds);
   await doc.useServiceAccountAuth(creds);
   await doc.loadInfo();
   const sheet = doc.sheetsByIndex[0];
