@@ -10,6 +10,10 @@ app.get('/recommendations', (req, res) => {
   res.json(recommendations);
 });
 
+app.get('/ping', (req, res) => {
+  res.json({ ok: true });
+})
+
 module.exports = async (loadData) => {
   _data = await loadData();
   console.log(`loaded ${_data.length} entries!`);
