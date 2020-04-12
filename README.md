@@ -4,6 +4,8 @@ A backend service to provide data to the Plant Ma app.
 
 ## Getting Started
 
+### Google setup
+
 The app currently uses Google Sheets as its data source and leverages the Google Sheets API.
 
 To start:
@@ -17,7 +19,28 @@ To start:
  1. Open the Google Sheet that will be used to store the data
     1. Share the sheet with the email address of your new Service Account
 
+### Local development
+
+Get on the target node version using your preferred NodeJS version manager (specificed in `.nvmrc`):
+
+```sh
+$ nvm use
+```
+
+Install dependencies:
+
+```sh
+$ npm install
+```
+
+Start server:
+
+```sh
+$ npm start
+```
+
 ## To Do
+ * [ ] document build / creds process
  * [ ] server logging
  * [ ] query param whitelist
  * [ ] error handling for data load failure
