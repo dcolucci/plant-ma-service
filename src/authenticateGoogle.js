@@ -20,7 +20,7 @@ module.exports = () => {
     console.log('Found local credentials file for Google auth');
     return JSON.parse(credsFile);
   } catch (e) {
-    // do nothing
+    // proceed to option 3...
   }
 
   // option 3: read from .env file
