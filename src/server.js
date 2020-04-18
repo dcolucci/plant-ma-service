@@ -1,6 +1,7 @@
 const express = require('express');
 
 const getRecommendations = require('./getRecommendations.js');
+const authenticateGoogle = require('./authenticateGoogle.js');
 
 const PORT = process.env.PORT || 8000;
 const app = express();
@@ -18,7 +19,8 @@ app.get('/ping', (req, res) => {
 })
 
 module.exports = async (loadData) => {
-  _data = await loadData();
+  const creds = authenticateGoogle();
+  _data = await loadData(creds);
   console.log(`loaded ${_data.length} entries, yo!`);
   app.listen(PORT, () => {
     console.log(`server started on port ${PORT}!`);

@@ -1,6 +1,6 @@
 const { GoogleSpreadsheet } = require('google-spreadsheet')
 
-const creds = require('../plant-ma-google-service-creds-auto.json');
+// const creds = require('../plant-ma-google-service-creds-auto.json');
 
 const SHEET_ID = '1ZU7TK1ZWOyXaA_R3_aFLBGwRG6Hpahqm6E97S8IVoPQ';
 
@@ -12,7 +12,7 @@ const expandRow = (rowData) => {
   return starSigns.map(sign => [...rowData, sign.trim()]);
 };
 
-module.exports = async function loadData() {
+module.exports = async function loadData(creds) {
   await doc.useServiceAccountAuth(creds);
   await doc.loadInfo();
   const sheet = doc.sheetsByIndex[0];
